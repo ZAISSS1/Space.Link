@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(210, 11%, 20%);
+  --muted: hsl(120, 20%, 97%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(210, 11%, 20%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(210, 11%, 20%);
+  --border: hsl(120, 15%, 90%);
+  --input: hsl(120, 15%, 90%);
+  --primary: hsl(122, 39%, 49%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(120, 20%, 97%);
+  --secondary-foreground: hsl(210, 11%, 20%);
+  --accent: hsl(120, 20%, 97%);
+  --accent-foreground: hsl(210, 11%, 20%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(122, 39%, 49%);
+  --radius: 0.5rem;
+  
+  /* Custom Space Link colors */
+  --sustainable-green: hsl(122, 39%, 49%);
+  --dark-green: hsl(122, 50%, 35%);
+  --light-green: hsl(120, 28%, 95%);
+  --text-dark: hsl(210, 11%, 20%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(122, 39%, 49%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .line-button img {
+    border-radius: 50% !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    display: block !important;
+  }
+  
+  .line-button {
+    border-radius: 50% !important;
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+  }
+  
+
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+
+  
+  .hero-icon-float {
+    animation: hero-float 3s ease-in-out infinite;
+  }
+  
+  @keyframes hero-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+      opacity: 0.7;
+    }
+    50% { 
+      transform: translateY(-15px) rotate(5deg); 
+      opacity: 1;
+    }
+  }
+  
+  /* Ensure rounded buttons */
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  }
+  
+  .line-button {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  }
+  
+  .line-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  }
+  
+  .content-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sustainable-green {
+    color: hsl(122, 39%, 49%);
+  }
+  
+  .bg-sustainable-green {
+    background-color: hsl(122, 39%, 49%);
+  }
+  
+  .dark-green {
+    color: hsl(122, 50%, 35%);
+  }
+  
+  .bg-dark-green {
+    background-color: hsl(122, 50%, 35%);
+  }
+  
+  .light-green {
+    color: hsl(120, 28%, 95%);
+  }
+  
+  .bg-light-green {
+    background-color: hsl(120, 28%, 95%);
+  }
+  
+  .text-dark {
+    color: hsl(210, 11%, 20%);
+  }
+}
